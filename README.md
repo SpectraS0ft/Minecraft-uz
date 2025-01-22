@@ -1,2 +1,2 @@
-# Minecraft-uz
+# SpectraSoft
 Yaratuvchi Normurodov Ravshanbek
