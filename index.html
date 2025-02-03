@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texnik nosozlik</title>
+    <title>Aylanayotgan Gayka</title>
     <style>
         body {
             display: flex;
@@ -11,30 +11,46 @@
             align-items: center;
             height: 100vh;
             background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
         }
 
-        .error {
-            font-size: 36px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nut {
+            width: 60px;
+            height: 60px;
+            background: silver;
+            border-radius: 50%;
             position: relative;
-            animation: glitch 1s infinite linear;
+            border: 5px solid gray;
+            animation: spin 2s linear infinite;
         }
 
-        @keyframes glitch {
-            0% { transform: translate(0, 0); color: white; }
-            20% { transform: translate(-2px, 2px); color: red; }
-            40% { transform: translate(2px, -2px); color: blue; }
-            60% { transform: translate(-3px, 3px); color: yellow; }
-            80% { transform: translate(3px, -3px); color: cyan; }
-            100% { transform: translate(0, 0); color: white; }
+        .nut::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="error">⚠ Texnik nosozlik ⚠</div>
+    <div class="container">
+        <div class="nut"></div>
+        <div class="nut"></div>
+        <div class="nut"></div>
+    </div>
 </body>
 </html>
