@@ -1,1 +1,68 @@
-<div class="loader"></div>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Nosozligi</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .server {
+            width: 100px;
+            height: 150px;
+            background: gray;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            animation: glitch 0.5s infinite;
+        }
+
+        .server::before, 
+        .server::after {
+            content: "";
+            position: absolute;
+            width: 90%;
+            height: 10px;
+            background: red;
+            left: 5%;
+        }
+
+        .server::before {
+            top: 20%;
+            animation: glitch-line 0.3s infinite alternate;
+        }
+
+        .server::after {
+            top: 60%;
+            animation: glitch-line 0.3s infinite alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-3px, 2px); filter: hue-rotate(20deg); }
+            40% { transform: translate(3px, -2px); filter: hue-rotate(40deg); }
+            60% { transform: translate(-2px, 3px); filter: hue-rotate(60deg); }
+            80% { transform: translate(2px, -3px); filter: hue-rotate(80deg); }
+            100% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+        }
+
+        @keyframes glitch-line {
+            0% { width: 90%; background: red; }
+            100% { width: 80%; background: yellow; }
+        }
+    </style>
+</head>
+<body>
+    <div class="server"></div>
+</body>
+</html>
